@@ -29,7 +29,7 @@ const itemsSchema = {
 const Item = mongoose.model("Item", itemsSchema);
 
 const item1 = new Item({
-  name: "Welcome to do list"
+  name: "Welcome to your TO-do-list"
 });
 
 const defaultItems = [item1];
@@ -127,22 +127,14 @@ app.post("/delete", function(req, res) {
 
 });
 
-app.get("/work", function(req, res) {
-  res.render("list", {
-    listTitle: "Work List",
-    newListItems: workItems
-  });
-});
-
 app.get("/about", function(req, res) {
   res.render("about");
 });
 
-let port=process.env,PORT;
-if(port==null || port==""){
-  port=3000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
 }
-
 app.listen(port, function() {
   console.log("Server started");
 });
