@@ -29,10 +29,18 @@ const itemsSchema = {
 const Item = mongoose.model("Item", itemsSchema);
 
 const item1 = new Item({
-  name: "Welcome to your TO-do-list"
+  name: "Welcome to your to-do-list"
+});
+const item2 = new Item({
+  name: "Hit the + button to add a new item."
 });
 
-const defaultItems = [item1];
+const item3 = new Item({
+  name: "<-- Hit this to delete an item."
+});
+
+
+const defaultItems = [item1, item2, item3];
 
 const listSchema = {
   name: String,
